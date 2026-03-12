@@ -1,0 +1,276 @@
+/* --- Reset & Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+body {
+    background: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    transition: 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+}
+
+/* --- Navbar/Header --- */
+header {
+    background: #000;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header .logo h1 {
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header .logo a:hover h1 {
+    color: #ff9800;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #ff9800;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+/* --- About Section --- */
+#about {
+    padding: 80px 20px;
+    background: #f7f7f7;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #000;
+    position: relative;
+}
+
+.about-container h2::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #ff9800;
+    display: block;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.about-intro {
+    max-width: 750px;
+    margin: 20px auto 50px;
+    color: #555;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Feature Cards */
+.about-features {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 30px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+    border-top: 4px solid #ff9800;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 15px;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Vision Section */
+.vision {
+    max-width: 750px;
+    margin: auto;
+    margin-bottom: 60px;
+}
+
+.vision h3 {
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.vision p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Call to Action */
+.about-cta {
+    padding: 40px 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.about-cta h3 {
+    margin-bottom: 20px;
+}
+
+.about-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ff9800;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.about-btn:hover {
+    background: #e68900;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-features {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* --- Footer --- */
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: #ff9800;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .content {
+        padding: 25px;
+    }
+
+    .content h2 {
+        font-size: 1.5rem;
+    }
+}

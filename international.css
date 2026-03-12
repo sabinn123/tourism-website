@@ -1,0 +1,272 @@
+/* ---------- Reset & Base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ---------- Links ---------- */
+a {
+    text-decoration: none;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* ---------- Headings ---------- */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 700;
+}
+
+/* ---------- Header / Navbar ---------- */
+header {
+    background: #000;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo a {
+    color: #fff;
+}
+
+header .logo h1 {
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header .logo a:hover h1 {
+    color: #ff9800;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #ff9800;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+    height: 70vh;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    opacity: 0.95;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Destinations Section ---------- */
+.destinations {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.destinations h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    color: #222;
+    margin: 15px 0 8px;
+    padding: 0 15px;
+}
+
+.card p {
+    color: #666;
+    padding: 0 15px 15px;
+}
+
+.card a {
+    display: inline-block;
+    margin: 0 0 15px;
+    padding: 8px 20px;
+    background: #ff9800;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.card a:hover {
+    background: #e68900;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: #ff9800;
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:900px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
+
+@media(max-width:768px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .destinations {
+        padding: 40px 20px;
+    }
+}
+
+@media(max-width:600px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        height: 60vh;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
