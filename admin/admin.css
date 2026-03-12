@@ -1,0 +1,238 @@
+/* ---------- Reset & Base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+/* ---------- Body & Flex for Sticky Footer ---------- */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* full viewport height */
+    background: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ---------- Main ---------- */
+main {
+    flex: 1;
+    /* grow to push footer to bottom */
+    padding: 20px 0;
+}
+
+/* ---------- Header / Navbar ---------- */
+header {
+    background: #000;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header .logo h1 {
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header .logo a:hover h1 {
+    color: #ff9800;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #ff9800;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+/* ---------- Section ---------- */
+.destinations {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.destinations h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.destinations h3 {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* ---------- Bookings Table ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table th {
+    background: #000;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+}
+
+table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+    background: #f5f5f5;
+}
+
+table a {
+    color: #ff9800;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .destinations,
+    .features {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: #ff9800;
+}
